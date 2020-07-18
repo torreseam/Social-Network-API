@@ -1,0 +1,27 @@
+{
+  "name": "social-network-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.27.0",
+    "mongoose": "^5.9.25",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torreseam/Social-Network-API.git"
+  },
+  "author": "Edgar Torres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/torreseam/Social-Network-API/issues"
+  },
+  "homepage": "https://github.com/torreseam/Social-Network-API#readme"
+}
