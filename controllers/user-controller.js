@@ -38,11 +38,11 @@ const userController = {
                 res.status(400).json(err);
             });
     },
-
-    //create user 
+    //create User
     createUser({ body }, res) {
+        console.log(body);
         User.create(body)
-            .then(dbPizzaData => res.json(dbPizzaData))
+            .then(dbUserData => res.json(dbUserData))
             .catch(err => res.status(400).json(err));
     },
 
@@ -86,19 +86,15 @@ const userController = {
             })
             .select('-__v')
             .then(dbUserData => {
-                // console.log('db user data')
                 console.log(dbUserData);
                 if (!dbUserData) {
                     res.status(404).json({ message: 'No user found with this id!' })
                     return;
                 }
-                // res.json(dbUserData)
                 User.findOne({ _id: params.id })
                     .then(user => {
                         res.json(user);
                     })
-
-
             })
             .catch(err => {
                 res.status(400).json(err)
