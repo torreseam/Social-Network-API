@@ -101,16 +101,16 @@ const userController = {
             })
     },
 
-    //remove a Friend 
-    removeFriend({ params }, res) {
+    //delete a Friend 
+    deleteFriend({ params }, res) {
         User.findByIdAndUpdate(
             { _id: params.id },
-            { $pull: { friends: params.friendId } },
-            { new: true, runValidators: true }
+            { $pull: { friends:{ usernameId: params.usernameId }}},
+            { new: true }
         )
             .populate({
                 path: 'friends',
-                select: '_id'
+                // select: '_id'
             })
             .select('-__v')
             .then(dbUserData => {
